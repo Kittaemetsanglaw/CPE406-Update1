@@ -13,14 +13,19 @@ const TemperatureCard = ({ temperature }) => {
         w-[1082px] 
         h-[711px]
       "
-      style={{
-        backgroundImage: `url(${Temperature})`, // ใช้ภาพพื้นหลังจาก assets
-        backgroundSize: "175px 531px", // ปรับขนาดภาพให้ตรงตามที่กำหนด
-        backgroundPosition: "1159px 294px", // กำหนดตำแหน่ง top และ left
-        backgroundRepeat: "no-repeat", // ไม่ให้ภาพซ้ำ
-        
-      }}
-    >
+      >
+      <img 
+       src={Temperature}
+       alt="Thermometer"
+       className="absolute w-[auto] h-[531px]"
+       style={{
+         top: "110px",
+         left: "750px",
+         gap: "0px",
+         
+       }}
+      />
+    
       {/* Title */}
       <h2 className="text-[48px] font-bold mb-4 z-10">อุณหภูมิที่วัดได้</h2>
 
@@ -31,14 +36,18 @@ const TemperatureCard = ({ temperature }) => {
       </div>
 
       {/* Description */}
-      <p className="text-[24px] mb-4 z-10">
+      <div className="flex justify-center">
+      <p className="text-[24px] bg-[#55C1E8] px-6 py-2 rounded-[5px] mb-4 z-10 display inline-block"
+      >
         อุณหภูมิร่างกายปกติ และไม่มีอาการผิดปกติ
       </p>
-
+      </div>
+       
       {/* Save Button */}
       <button className="bg-[#55C1E8] text-white px-6 py-2 rounded-full font-bold hover:bg-gray-100 z-10">
         เก็บค่าอุณหภูมิ
       </button>
+     
     </div>
   );
 };
